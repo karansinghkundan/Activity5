@@ -11,6 +11,16 @@ public class Product {
         this.stock = stock;
     }
 
+    @Override
+    public String toString() {
+        return "Product{" +
+                "no=" + no +
+                ", cost=" + cost +
+                ", Name='" + Name + '\'' +
+                ", stock=" + stock +
+                '}';
+    }
+
     public int getNo() {
         return no;
     }
@@ -45,16 +55,16 @@ public class Product {
 
     public double getPrice() {
         if (cost >= 100) {
-            cost = cost + (0.3 * cost);
-            return cost;
+           this.cost = this.cost + (0.3 * this.cost);
+            return this.cost;
         }
         else if (cost >= 50 && cost < 100) {
-            cost = cost + (0.35 * cost);
-            return cost;
+            this.cost = this.cost + (0.35 * this.cost);
+            return this.cost;
         }
         else {
-            cost = cost + (0.45 * cost);
-             return cost;
+            this.cost = this.cost + (0.45 * this.cost);
+             return this.cost;
         }
     }
     public boolean chkStock()
@@ -66,16 +76,16 @@ public class Product {
     }
 public double chkDiscount()
 {
-    if(cost >=100) {
-        cost = cost - (0.05 * cost);
+    if(getPrice()>=100) {
+        this.cost = this.cost - (0.05 * cost);
         return cost;
     }
-    else if(cost>=40 && cost<100) {
+    else if(getPrice()>=40 && cost<100) {
         cost = cost - (0.04 * cost);
         return cost;
     }
     else
-        return cost;
+        return 0;
 
     }
 }
