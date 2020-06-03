@@ -64,10 +64,24 @@ public class Product {
         else
             return false;
     }
-    
+public double chkDiscount()
+{
+    if(cost >=100) {
+        cost = cost - (0.05 * cost);
+        return cost;
+    }
+    else if(cost>=40 && cost<100) {
+        cost = cost - (0.04 * cost);
+        return cost;
+    }
+    else
+        return cost;
 
-
+    }
 }
+
+
+
 
 
 
